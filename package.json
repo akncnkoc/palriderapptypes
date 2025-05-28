@@ -1,0 +1,24 @@
+{
+  "name": "palriderapptypes",
+  "version": "0.0.1",
+  "main": "",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts"
+    },
+    "./company": {
+      "types": "./dist/company/index.d.ts"
+    },
+    "./courier": {
+      "types": "./dist/courier/index.d.ts"
+    }
+  },
+  "license": "MIT"
+}
