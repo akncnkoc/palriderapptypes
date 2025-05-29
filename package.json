@@ -1,6 +1,6 @@
 {
   "name": "palriderapptypes",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "main": "",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -13,11 +13,23 @@
     ".": {
       "types": "./dist/index.d.ts"
     },
-    "./company": {
-      "types": "./dist/company/index.d.ts"
+    "./auth": {
+      "types": "./dist/auth/index.d.ts"
+    },
+    "./common": {
+      "types": "./dist/common/index.d.ts"
     },
     "./courier": {
       "types": "./dist/courier/index.d.ts"
+    },
+    "./company": {
+      "types": "./dist/company/index.d.ts"
+    },
+    "./order": {
+      "types": "./dist/order/index.d.ts"
+    },
+    "./user": {
+      "types": "./dist/user/index.d.ts"
     }
   },
   "license": "MIT"

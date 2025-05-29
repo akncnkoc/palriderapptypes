@@ -17,9 +17,9 @@ export type PaginationDataResultT<T> = {
     total_pages: number;
     data: Array<T>;
 };
-export * from "./src/auth/";
-export * from "./src/common";
-export * from "./src/company";
-export * from "./src/courier";
-export * from "./src/order";
-export * from "./src/user";
+export * from "src/auth/";
+export * from "src/common";
+export * from "src/company";
+export * from "src/courier";
+export * from "src/order";
+export * from "src/user";

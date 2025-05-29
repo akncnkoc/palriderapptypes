@@ -4,17 +4,7 @@ export type AuthenticateSuccessResponseType = {
   data: string;
 };
 
-export type AuthenticateRequestType = {
-  email: string;
-  password: string;
-};
-
-export type AuthenticateVerifyRequestType = {
-  phone_number: string;
-  code: string;
-};
-
-export type BaseUserDto = {
+export type BaseUserDTO = {
   id: string;
   name: string;
   surname: string;
