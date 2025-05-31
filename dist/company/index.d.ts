@@ -16,7 +16,7 @@ export type CompanyBranchDTO = {
     status: string;
     company_branch_users?: Array<CompanyBranchUserDTO>;
     company_branch_documents?: Array<CompanyBranchDocumentDTO>;
-    company_branch_address?: Array<CompanyBranchAddressDTO>;
+    company_branch_addresses?: Array<CompanyBranchAddressDTO>;
 };
 export type CompanyBranchAddressDTO = {
     id: string;

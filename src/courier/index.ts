@@ -1,5 +1,5 @@
+import { BaseUserDTO } from "~/common";
 import { OrderDTO } from "~/order";
-import type { BaseUserDto } from "~/user";
 
 export type CourierOnboardingState =
   | "initialized"
@@ -12,7 +12,7 @@ export type CourierOrderState = "available" | "delivering" | "arriving";
 export type CourierDTO = {
   id: string;
   name: string | null;
-  user?: BaseUserDto | null;
+  user?: BaseUserDTO | null;
   identifier: string;
   onboarding_state: CourierOnboardingState;
   order_state: CourierOrderState;
