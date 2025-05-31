@@ -19,3 +19,9 @@ export type BaseUserDTO = {
     courier: CourierDTO | null;
     company_branch_user: CompanyBranchUserDTO | null;
 };
+export type FileType = {
+    name: string;
+    uri: string;
+    size: number;
+    type: string;
+};
