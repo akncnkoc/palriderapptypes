@@ -80,7 +80,7 @@ export type UpdateCompanyRequestDTO = {
 };
 export type OnboardingCompanyRequestDTO = {
     company: OnboardingCompanyInfoRequestDTO;
-    branch: OnboardingCompanyBranchInfoRequestDTO;
+    branch: OnboardingCompanyBranchRequestDTO;
 };
 export type OnboardingCompanyInfoRequestDTO = {
     name: string;
