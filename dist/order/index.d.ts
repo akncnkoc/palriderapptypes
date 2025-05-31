@@ -159,6 +159,7 @@ export type OrderShipmentDTO = {
     expected_delivery_time: string;
     completed_at: string | null;
     cancelled_at: string | null;
+    courier: CourierDTO | null;
     current_order_shipment_destination_id: string | null;
     current_order_shipment_destination: OrderShipmentDestinationDTO | null;
     overview_polyline: string;
