@@ -14,6 +14,7 @@ export type CompanyBranchDTO = {
     name: string;
     email: string | null;
     status: string;
+    company_id: string;
     company_branch_users?: Array<CompanyBranchUserDTO>;
     company_branch_documents?: Array<CompanyBranchDocumentDTO>;
     company_branch_addresses?: Array<CompanyBranchAddressDTO>;
