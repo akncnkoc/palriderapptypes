@@ -26,7 +26,7 @@ export type CreateCourierDocumentRequestDTO = {
 export type OnboardCourierRequestDTO = {
     user: OnboardingCourierUserRequestDTO;
     vehicles: Array<OnboardingCourierVehicleInfoRequestDTO>;
-    documents: void;
+    documents: OnboardingCourierDocumentInfoRequestDTO;
 };
 export type OnboardingCourierUserRequestDTO = {
     name: string;

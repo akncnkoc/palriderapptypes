@@ -4,6 +4,10 @@ export type OrderAcceptAttendeesRequestDTO = {
     order_id: string;
     courier_ids: Array<string>;
 };
+export type OrderAcceptAttendeeRequestDTO = {
+    order_id: string;
+    courier_id: string;
+};
 export type OrderRejectAttendeesRequestDTO = {
     order_id: string;
     courier_ids: Array<string>;

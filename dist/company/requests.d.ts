@@ -80,7 +80,7 @@ export type UpdateCompanyRequestDTO = {
 };
 export type OnboardingCompanyRequestDTO = {
     company: OnboardingCompanyInfoRequestDTO;
-    branch: void;
+    branch: OnboardingCompanyBranchInfoRequestDTO;
 };
 export type OnboardingCompanyInfoRequestDTO = {
     name: string;
@@ -109,4 +109,14 @@ export type OnboardingCompanyBranchAddressRequestDTO = {
     zip_code: string;
     latitude: number;
     longitude: number;
+};
+export type CreateCompanyBranchUserRequestDTO = {
+    name: string;
+    surname: string;
+    email: string;
+    phone_number: string;
+    company_id: string;
+    company_branch_id: string;
+    company_branch_address_id: string;
+    company_branch_user_role_id: string;
 };
