@@ -156,6 +156,7 @@ export type OrderShipmentDestinationDTO = {
   order_shipment_destination_no: string;
   address: string;
   sort: number;
+  notes: string | null;
   overview_polyline: string;
   duration: number;
   distance: number;
