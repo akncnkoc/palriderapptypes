@@ -1,4 +1,3 @@
-import { BaseUserDTO } from "~/common";
 export type CompanyDTO = {
     id: string;
     name: string | null;
@@ -60,7 +59,8 @@ export type CompanyBranchUserDTO = {
     created_at: string | null;
     updated_at: string | null;
     acceptance_waiting_list: Array<string>;
-    user: BaseUserDTO | null;
+    name: string;
+    surname: string;
     company: CompanyDTO | null;
     company_branch: CompanyBranchDTO | null;
     company_branch_user_role: CompanyBranchUserRoleDTO | null;

@@ -1,6 +1,6 @@
 {
   "name": "palriderapptypes",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "main": "",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -32,5 +32,9 @@
       "types": "./dist/user/index.d.ts"
     }
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "global": "^4.4.0",
+    "typescript": "^5.8.3"
+  }
 }
