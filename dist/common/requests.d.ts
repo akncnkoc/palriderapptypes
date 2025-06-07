@@ -7,3 +7,6 @@ export type SearchAndSortRequestDTO = {
     sorting: string;
     search: string | null;
 };
+export type UpdateNotificationInfoRequestDTO = {
+    one_signal_app_player_id: string;
+};
