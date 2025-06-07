@@ -123,4 +123,11 @@ export type CourierVehicleImageDTO = {
   path: string;
 };
 
+export type CourierVehicleRefuseTypeDTO = {
+  id: string;
+  name: string;
+  description: string | null;
+  group: string;
+};
+
 export * from "./requests";

@@ -59,3 +59,7 @@ export type UpdateCourierVehicleRequestDTO = {
     name: string;
     is_active: boolean;
 };
+export type RefuseCourierVehicleRequestDTO = {
+    courier_vehicle_id: string;
+    courier_vehicle_refuse_type_id: string;
+};

@@ -95,4 +95,10 @@ export type CourierVehicleImageDTO = {
     id: string;
     path: string;
 };
+export type CourierVehicleRefuseTypeDTO = {
+    id: string;
+    name: string;
+    description: string | null;
+    group: string;
+};
 export * from "./requests";
