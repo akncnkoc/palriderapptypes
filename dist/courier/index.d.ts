@@ -36,6 +36,12 @@ export type CourierWalletDTO = {
     courier_wallet_transactions: Array<CourierWalletTransactionDTO>;
 };
 export type CourierDocumentType = "profile_photo" | "identity_card_front" | "identity_card_back" | "driver_licence_front" | "driver_licence_back" | "unknown";
+export type CourierDocumentRefuseTypeDTO = {
+    id: string;
+    name: string;
+    description: string;
+    group: string;
+};
 export type CourierDocumentStatus = "pending" | "refused" | "approved";
 export type CourierDocumentDTO = {
     id: string;
@@ -43,6 +49,8 @@ export type CourierDocumentDTO = {
     status: CourierDocumentStatus;
     confirmed_at: string | null;
     rejected_at: string | null;
+    courier_document_refuse_type_id: string | null;
+    courier_document_refuse_type: CourierDocumentRefuseTypeDTO | null;
 };
 export type CourierWalletTransactionItemType = "order_earning" | "app_using_fee";
 export type CourierWalletTransactionItemDTO = {
@@ -82,6 +90,12 @@ export type CourierBankAccountDTO = {
 };
 export type CourierVehicleType = "bike" | "motorcycle" | "car";
 export type CourierVehicleStatus = "pending" | "approved" | "refused";
+export type CourierVehicleRefuseTypeDTO = {
+    id: string;
+    name: string;
+    description: string | null;
+    group: string;
+};
 export type CourierVehicleDTO = {
     id: string;
     courier_id: string;
@@ -90,15 +104,11 @@ export type CourierVehicleDTO = {
     status: CourierVehicleStatus;
     is_active: boolean;
     courier_vehicle_images: Array<CourierVehicleImageDTO>;
+    courier_vehicle_refuse_type_id: string | null;
+    courier_vehicle_refuse_type: CourierVehicleRefuseTypeDTO | null;
 };
 export type CourierVehicleImageDTO = {
     id: string;
     path: string;
-};
-export type CourierVehicleRefuseTypeDTO = {
-    id: string;
-    name: string;
-    description: string | null;
-    group: string;
 };
 export * from "./requests";
