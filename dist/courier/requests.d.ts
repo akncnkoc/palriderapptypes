@@ -64,6 +64,6 @@ export type RefuseCourierVehicleRequestDTO = {
     courier_vehicle_refuse_type_id: string;
 };
 export type RefuseCourierDocumentRequestDTO = {
-    courier_vehicle_id: string;
+    courier_document_id: string;
     courier_document_refuse_type_id: string;
 };
