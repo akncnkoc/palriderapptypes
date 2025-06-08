@@ -1,5 +1,5 @@
 import { FileType } from "~/common";
-import { CourierVehicleType } from ".";
+import { CourierDocumentType, CourierVehicleType } from ".";
 
 export type AuthenticateCourierRequestDTO = { phone_number: string };
 export type VerifyCourierRequestDTO = { phone_number: string; code: string };
@@ -21,6 +21,7 @@ export type UpdateCourierBankAccountRequestDTO = {
 export type CreateCourierDocumentRequestDTO = {
   courier_id: string;
   document: FileType;
+  type: CourierDocumentType | null;
 };
 
 export type OnboardCourierRequestDTO = {
