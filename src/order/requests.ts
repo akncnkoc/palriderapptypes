@@ -62,5 +62,5 @@ export type DeliverOrderShipmentDestinationRequestDTO = {
 };
 export type CancelOrderShipmentDestinationRequestDTO = {
   order_shipment_destination_cancellation_reason_id: string;
-  order_shipment_destination_cancellation_images: Array<FileType>;
+  order_shipment_destination_cancellation_photos: Array<FileType>;
 };

@@ -103,11 +103,11 @@ export type CourierVehicleDTO = {
     plate_number: string;
     status: CourierVehicleStatus;
     is_active: boolean;
-    courier_vehicle_images: Array<CourierVehicleImageDTO>;
+    courier_vehicle_photos: Array<CourierVehiclePhotoDTO>;
     courier_vehicle_refuse_type_id: string | null;
     courier_vehicle_refuse_type: CourierVehicleRefuseTypeDTO | null;
 };
-export type CourierVehicleImageDTO = {
+export type CourierVehiclePhotoDTO = {
     id: string;
     path: string;
 };
