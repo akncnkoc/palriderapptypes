@@ -61,6 +61,7 @@ export type CompanyBranchUserDTO = {
     acceptance_waiting_list: Array<string>;
     name: string;
     surname: string;
+    email: string;
     phone_number: string;
     is_active: boolean;
     company: CompanyDTO | null;

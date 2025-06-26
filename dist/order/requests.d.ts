@@ -26,7 +26,6 @@ export type CreateOrderBonusRequestDTO = {
 export type CreateOrderRequestDTO = {
     company_branch_id: string;
     company_branch_address_id: string;
-    company_branch_user_id: string;
     company_branch_wallet_id: string;
     start_time: number;
     work_hour: number;
