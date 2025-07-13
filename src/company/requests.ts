@@ -69,11 +69,13 @@ export type DeleteCompanyBranchWalletRequestDTO = {
 
 export type CreateCompanyCategoryRequestDTO = {
   name: string;
+  culture: string;
 };
 
 export type UpdateCompanyCategoryRequestDTO = {
   company_category_id: string;
   name: string;
+  culture: string;
 };
 
 export type CreateCompanyRequestDTO = {

@@ -112,5 +112,6 @@ export type CompanyBranchWalletTransactionItemDTO = {
 export type CompanyCategoryDTO = {
     id: string;
     name: string;
+    culture: string;
 };
 export * from "./requests";
