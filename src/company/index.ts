@@ -41,6 +41,14 @@ export type CompanyBranchDocumentTypeDTO = {
   id: string;
   name: string;
 };
+export type CompanyBranchDocumentTypeTranslationDTO = {
+  id: string;
+  name: string;
+  company_branch_document_type_id: string;
+  culture: string;
+  group: string;
+  description: string;
+};
 
 export type CompanyBranchDocumentRefuseTypeDTO = {
   id: string;
@@ -49,6 +57,7 @@ export type CompanyBranchDocumentRefuseTypeDTO = {
 export type CompanyBranchDocumentRefuseTypeTranslationDTO = {
   id: string;
   name: string;
+  company_branch_document_refuse_type_id: string;
   culture: string;
   group: string;
   description: string;
