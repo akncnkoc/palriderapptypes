@@ -37,6 +37,13 @@ export type CompanyBranchDocumentRefuseTypeDTO = {
     id: string;
     name: string;
 };
+export type CompanyBranchDocumentRefuseTypeTranslationDTO = {
+    id: string;
+    name: string;
+    culture: string;
+    group: string;
+    description: string;
+};
 export type CompanyBranchDocumentStatus = "pending" | "approved" | "refused";
 export type CompanyBranchDocumentDTO = {
     id: string;
