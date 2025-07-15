@@ -40,6 +40,8 @@ export type CompanyBranchAddressDTO = {
 export type CompanyBranchDocumentTypeDTO = {
   id: string;
   name: string;
+  group: string;
+  description: string;
 };
 export type CompanyBranchDocumentTypeTranslationDTO = {
   id: string;
@@ -53,6 +55,8 @@ export type CompanyBranchDocumentTypeTranslationDTO = {
 export type CompanyBranchDocumentRefuseTypeDTO = {
   id: string;
   name: string;
+  group: string;
+  description: string;
 };
 export type CompanyBranchDocumentRefuseTypeTranslationDTO = {
   id: string;
