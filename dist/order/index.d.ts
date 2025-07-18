@@ -15,6 +15,7 @@ export type OrderDTO = {
     company_branch_user: CompanyBranchUserDTO | null;
     company_branch_address: CompanyBranchAddressDTO | null;
     vehicle_types: Array<OrderVehicleType>;
+    amount_to_paid: number;
     current_mile: number;
     current_hour: number;
     total_amount: number;
