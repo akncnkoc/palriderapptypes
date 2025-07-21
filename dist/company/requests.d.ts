@@ -91,7 +91,6 @@ export type OnboardingCompanyInfoRequestDTO = {
 };
 export type OnboardingCompanyBranchRequestDTO = {
     info: OnboardingCompanyBranchInfoRequestDTO;
-    documents: Array<FileType>;
     user: OnboardingCompanyBranchUserRequestDTO;
     address: OnboardingCompanyBranchAddressRequestDTO;
 };
@@ -111,6 +110,7 @@ export type OnboardingCompanyBranchAddressRequestDTO = {
     zip_code: string;
     latitude: number;
     longitude: number;
+    documents: Array<FileType>;
 };
 export type CreateCompanyBranchUserRequestDTO = {
     name: string;
