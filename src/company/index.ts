@@ -23,7 +23,6 @@ export type CompanyBranchDTO = {
   onboarding_state: string;
   company_id: string;
   company_branch_users?: Array<CompanyBranchUserDTO>;
-  company_branch_documents?: Array<CompanyBranchDocumentDTO>;
   company_branch_addresses?: Array<CompanyBranchAddressDTO>;
 };
 
@@ -37,6 +36,7 @@ export type CompanyBranchAddressDTO = {
   zip_code: string;
   company_branch?: CompanyBranchDTO | null;
   company_branch_address_photos: Array<CompanyBranchAddressPhotoDTO>;
+  company_branch_address_documents?: Array<CompanyBranchAddressDocumentDTO>;
   updated_at: string;
 };
 export type CompanyBranchAddressPhotoDTO = {
@@ -45,43 +45,46 @@ export type CompanyBranchAddressPhotoDTO = {
   size: string;
 };
 
-export type CompanyBranchDocumentTypeDTO = {
+export type CompanyBranchAddressDocumentTypeDTO = {
   id: string;
   name: string;
   group: string;
   description: string;
 };
-export type CompanyBranchDocumentTypeTranslationDTO = {
+export type CompanyBranchAddressDocumentTypeTranslationDTO = {
   id: string;
   name: string;
-  company_branch_document_type_id: string;
+  company_branch_address_document_type_id: string;
   culture: string;
   group: string;
   description: string;
 };
 
-export type CompanyBranchDocumentRefuseTypeDTO = {
+export type CompanyBranchAddressDocumentRefuseTypeDTO = {
   id: string;
   name: string;
   group: string;
   description: string;
 };
-export type CompanyBranchDocumentRefuseTypeTranslationDTO = {
+export type CompanyBranchAddressDocumentRefuseTypeTranslationDTO = {
   id: string;
   name: string;
-  company_branch_document_refuse_type_id: string;
+  company_branch_address_document_refuse_type_id: string;
   culture: string;
   group: string;
   description: string;
 };
-export type CompanyBranchDocumentStatus = "pending" | "approved" | "refused";
-export type CompanyBranchDocumentDTO = {
+export type CompanyBranchAddressDocumentStatus =
+  | "pending"
+  | "approved"
+  | "refused";
+export type CompanyBranchAddressDocumentDTO = {
   id: string;
-  company_branch_document_type: CompanyBranchDocumentTypeDTO;
-  status: CompanyBranchDocumentStatus;
+  company_branch_address_document_type: CompanyBranchAddressDocumentTypeDTO;
+  status: CompanyBranchAddressDocumentStatus;
   approved_at: string | null;
   refused_at: string | null;
-  company_branch_document_refuse_type?: CompanyBranchDocumentRefuseTypeDTO | null;
+  company_branch_address_document_refuse_type?: CompanyBranchAddressDocumentRefuseTypeDTO | null;
 };
 
 export type CompanyBranchUserRoleDTO = {
