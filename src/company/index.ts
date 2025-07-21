@@ -36,8 +36,15 @@ export type CompanyBranchAddressDTO = {
   building_name_or_number: string | null;
   zip_code: string;
   company_branch?: CompanyBranchDTO | null;
+  company_branch_address_photos: Array<CompanyBranchAddressPhotoDTO>;
   updated_at: string;
 };
+export type CompanyBranchAddressPhotoDTO = {
+  id: string;
+  path: string;
+  size: string;
+};
+
 export type CompanyBranchDocumentTypeDTO = {
   id: string;
   name: string;
