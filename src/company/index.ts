@@ -20,7 +20,6 @@ export type CompanyBranchDTO = {
   name: string;
   email: string | null;
   status: string;
-  onboarding_state: string;
   company_id: string;
   company_branch_users?: Array<CompanyBranchUserDTO>;
   company_branch_addresses?: Array<CompanyBranchAddressDTO>;
@@ -28,6 +27,7 @@ export type CompanyBranchDTO = {
 
 export type CompanyBranchAddressDTO = {
   id: string;
+  onboarding_state: string;
   address: string;
   directions: string | null;
   longitude: number;
