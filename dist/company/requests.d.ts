@@ -22,8 +22,8 @@ export type DeleteCompanyBranchAddressPhotoRequestDTO = {
     company_branch_address_id: string;
     company_branch_address_photo_id: string;
 };
-export type CreateCompanyBranchDocumentRequestDTO = {
-    company_branch_id: string;
+export type CreateCompanyBranchAddressDocumentRequestDTO = {
+    company_branch_address_id: string;
     documents: Array<FileType>;
 };
 export type RefuseCompanyBranchDocumentRequestDTO = {
