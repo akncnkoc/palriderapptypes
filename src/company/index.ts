@@ -162,4 +162,11 @@ export type CompanyCategoryDTO = {
   culture: string;
 };
 
+export type CompanyCategoryTranslationDTO = {
+  id: string;
+  company_category_id: string;
+  culture: string;
+  name: string;
+};
+
 export * from "./requests";
