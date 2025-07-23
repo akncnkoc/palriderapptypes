@@ -2,7 +2,7 @@ import { CompanyBranchAddressUserDTO } from "~/company";
 import { CourierDTO } from "~/courier";
 
 export type BaseUserType =
-  | "company_branch_user"
+  | "company_branch_address_user"
   | "courier"
   | "dashboard_user"
   | "unidentified";

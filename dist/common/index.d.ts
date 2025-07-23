@@ -1,6 +1,6 @@
 import { CompanyBranchAddressUserDTO } from "~/company";
 import { CourierDTO } from "~/courier";
-export type BaseUserType = "company_branch_user" | "courier" | "dashboard_user" | "unidentified";
+export type BaseUserType = "company_branch_address_user" | "courier" | "dashboard_user" | "unidentified";
 export type BaseUserAppState = "background" | "active";
 export type BaseUserDTO = {
     id: string;
