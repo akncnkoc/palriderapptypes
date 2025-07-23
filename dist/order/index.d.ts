@@ -1,4 +1,4 @@
-import { CompanyBranchAddressDTO, CompanyBranchDTO, CompanyBranchUserDTO, CompanyDTO } from "~/company";
+import { CompanyBranchAddressDTO, CompanyBranchDTO, CompanyBranchAddressUserDTO, CompanyDTO } from "~/company";
 import { CourierDTO } from "~/courier";
 export type OrderVehicleType = "bike" | "motorcycle" | "car";
 export type OrderChannel = "mobile" | "web" | "integration";
@@ -12,7 +12,7 @@ export type OrderDTO = {
     order_no: string;
     company: CompanyDTO | null;
     company_branch: CompanyBranchDTO | null;
-    company_branch_user: CompanyBranchUserDTO | null;
+    company_branch_address_user: CompanyBranchAddressUserDTO | null;
     company_branch_address: CompanyBranchAddressDTO | null;
     vehicle_types: Array<OrderVehicleType>;
     amount_to_paid: number;

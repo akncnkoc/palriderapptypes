@@ -33,8 +33,8 @@ export type CreateCompanyBranchAddressDocumentRequestDTO = {
 };
 
 export type RefuseCompanyBranchDocumentRequestDTO = {
-  company_branch_document_id: string;
-  company_branch_document_refuse_type_id: string;
+  company_branch_address_document_id: string;
+  company_branch_address_document_refuse_type_id: string;
 };
 
 export type CreateCompanyBranchRequestDTO = {
@@ -58,8 +58,8 @@ export type CompanyBranchUserVerifyRequestDTO = {
   code: string;
 };
 
-export type UpdateCompanyBranchWalletRequestDTO = {
-  company_branch_wallet_id: string;
+export type UpdateCompanyBranchAddressWalletRequestDTO = {
+  company_branch_address_wallet_id: string;
   name: string;
 };
 export type DeleteCompanyBranchWalletRequestDTO = {
@@ -131,13 +131,11 @@ export type OnboardingCompanyBranchAddressRequestDTO = {
   documents: Array<FileType>;
 };
 
-export type CreateCompanyBranchUserRequestDTO = {
+export type CreateCompanyBranchAddresssUserRequestDTO = {
   name: string;
   surname: string;
   email: string;
   phone_number: string;
-  company_id: string;
-  company_branch_id: string;
   company_branch_address_id: string;
-  company_branch_user_role_id: string;
+  company_branch_address_user_role_id: string;
 };

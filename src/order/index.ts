@@ -1,7 +1,7 @@
 import {
   CompanyBranchAddressDTO,
   CompanyBranchDTO,
-  CompanyBranchUserDTO,
+  CompanyBranchAddressUserDTO,
   CompanyDTO,
 } from "~/company";
 import { CourierDTO } from "~/courier";
@@ -23,7 +23,7 @@ export type OrderDTO = {
   order_no: string;
   company: CompanyDTO | null;
   company_branch: CompanyBranchDTO | null;
-  company_branch_user: CompanyBranchUserDTO | null;
+  company_branch_address_user: CompanyBranchAddressUserDTO | null;
   company_branch_address: CompanyBranchAddressDTO | null;
   vehicle_types: Array<OrderVehicleType>;
   amount_to_paid: number;

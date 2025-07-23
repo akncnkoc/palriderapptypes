@@ -1,4 +1,4 @@
-import { CompanyBranchUserDTO } from "~/company";
+import { CompanyBranchAddressUserDTO } from "~/company";
 import { CourierDTO } from "~/courier";
 export type BaseUserType = "company_branch_user" | "courier" | "dashboard_user" | "unidentified";
 export type BaseUserAppState = "background" | "active";
@@ -17,7 +17,7 @@ export type BaseUserDTO = {
     user_type: BaseUserType;
     app_state: BaseUserAppState;
     courier: CourierDTO | null;
-    company_branch_user: CompanyBranchUserDTO | null;
+    company_branch_address_user: CompanyBranchAddressUserDTO | null;
 };
 export type FileType = {
     name: string;

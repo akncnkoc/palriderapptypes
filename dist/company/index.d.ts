@@ -14,7 +14,6 @@ export type CompanyBranchDTO = {
     email: string | null;
     status: string;
     company_id: string;
-    company_branch_users?: Array<CompanyBranchUserDTO>;
     company_branch_addresses?: Array<CompanyBranchAddressDTO>;
 };
 export type CompanyBranchAddressDTO = {
@@ -27,6 +26,8 @@ export type CompanyBranchAddressDTO = {
     building_name_or_number: string | null;
     zip_code: string;
     company_branch?: CompanyBranchDTO | null;
+    company_branch_id: string;
+    company_branch_address_users?: Array<CompanyBranchAddressUserDTO>;
     company_branch_address_photos: Array<CompanyBranchAddressPhotoDTO>;
     company_branch_address_documents?: Array<CompanyBranchAddressDocumentDTO>;
     updated_at: string;
@@ -73,16 +74,16 @@ export type CompanyBranchAddressDocumentDTO = {
     refused_at: string | null;
     company_branch_address_document_refuse_type?: CompanyBranchAddressDocumentRefuseTypeDTO | null;
 };
-export type CompanyBranchUserRoleDTO = {
+export type CompanyBranchAddressUserRoleDTO = {
     id: string;
     name: string;
 };
-export type CompanyBranchUserDTO = {
+export type CompanyBranchAddressUserDTO = {
     id: string;
     company_id: string | null;
     company_branch_id: string | null;
     company_branch_address_id: string | null;
-    company_branch_user_role_id: string | null;
+    company_branch_address_user_role_id: string | null;
     created_at: string | null;
     updated_at: string | null;
     acceptance_waiting_list: Array<string>;
@@ -93,7 +94,7 @@ export type CompanyBranchUserDTO = {
     is_active: boolean;
     company: CompanyDTO | null;
     company_branch: CompanyBranchDTO | null;
-    company_branch_user_role: CompanyBranchUserRoleDTO | null;
+    company_branch_address_user_role: CompanyBranchAddressUserRoleDTO | null;
 };
 export type CompanyPaymentMethodType = {
     id: string;
@@ -102,7 +103,7 @@ export type CompanyPaymentMethodType = {
     expiry_date: string;
     cvv: string;
 };
-export type CompanyBranchWalletDTO = {
+export type CompanyBranchAddressWalletDTO = {
     id: string;
     name: string;
     company_branch_id: string;
@@ -113,28 +114,28 @@ export type CompanyBranchWalletDTO = {
     is_deleted: boolean;
     deleted_at: string | null;
 };
-export type CompanyBranchWalletTransactionType = "start" | "add" | "subtract";
-export type CompanyBranchWalletTransactionDTO = {
+export type CompanyBranchAddressWalletTransactionType = "start" | "add" | "subtract";
+export type CompanyBranchAddressWalletTransactionDTO = {
     id: string;
-    company_branch_wallet_id: string;
+    company_branch_address_wallet_id: string;
     order_id: string | null;
-    type: CompanyBranchWalletTransactionType;
-    company_branch_user_id: string;
+    type: CompanyBranchAddressWalletTransactionType;
+    company_branch_address_user_id: string;
     amount: number;
     created_at: string;
     updated_at: string;
     is_deleted: boolean;
     deleted_at: string | null;
-    company_branch_wallet_transaction_items: Array<CompanyBranchWalletTransactionItemDTO>;
+    company_branch_address_wallet_transaction_items: Array<CompanyBranchAddressWalletTransactionItemDTO>;
 };
-export type CompanyBranchWalletTransactionItemType = "order_payment" | "app_using_fee";
-export type CompanyBranchWalletTransactionItemDTO = {
+export type CompanyBranchAddressWalletTransactionItemType = "order_payment" | "app_using_fee";
+export type CompanyBranchAddressWalletTransactionItemDTO = {
     id: string;
     name: string;
     description: string;
     amount: number;
-    type: CompanyBranchWalletTransactionItemType;
-    company_branch_wallet_transaction_id: string;
+    type: CompanyBranchAddressWalletTransactionItemType;
+    company_branch_address_wallet_transaction_id: string;
 };
 export type CompanyCategoryDTO = {
     id: string;
