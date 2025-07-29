@@ -173,4 +173,48 @@ export type CompanyCategoryTranslationDTO = {
   name: string;
 };
 
+export type CompanyWalletDTO = {
+  id: string;
+  name: string;
+  company_id: string;
+  balance: number;
+  inconsumable_balance: number;
+  company_wallet_transactions: Array<CompanyWalletTransactionDTO>;
+  created_at: string;
+  updated_at: string;
+  is_deleted: boolean;
+  deleted_at: string | null;
+};
+
+export type CompanyWalletTransactionType =
+  | "start"
+  | "add"
+  | "transfer"
+  | "subtract";
+export type CompanyWalletTransactionDTO = {
+  id: string;
+  company_wallet_id: string;
+  type: CompanyWalletTransactionType;
+  company_branch_address_user_id: string;
+  amount: number;
+  created_at: string;
+  updated_at: string;
+  is_deleted: boolean;
+  deleted_at: string | null;
+  company_wallet_transaction_items: Array<CompanyWalletTransactionItemDTO>;
+};
+
+export type CompanyWalletTransactionItemType =
+  | "transfer"
+  | "balance_add"
+  | "balance_withdraw";
+export type CompanyWalletTransactionItemDTO = {
+  id: string;
+  name: string;
+  description: string;
+  amount: number;
+  type: CompanyWalletTransactionItemType;
+  company_wallet_transaction_id: string;
+};
+
 export * from "./requests";
