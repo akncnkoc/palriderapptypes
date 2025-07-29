@@ -95,6 +95,7 @@ export type CompanyBranchAddressUserDTO = {
     company: CompanyDTO | null;
     company_branch: CompanyBranchDTO | null;
     company_branch_address_user_role: CompanyBranchAddressUserRoleDTO | null;
+    company_wallet_id: string | null;
 };
 export type CompanyPaymentMethodType = {
     id: string;
