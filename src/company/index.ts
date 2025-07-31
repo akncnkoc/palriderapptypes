@@ -108,6 +108,7 @@ export type CompanyBranchAddressUserDTO = {
   company_branch: CompanyBranchDTO | null;
   company_branch_address_user_role: CompanyBranchAddressUserRoleDTO | null;
   company_wallet_id: string | null;
+  company_app_fee: number;
 };
 
 export type CompanyPaymentMethodType = {
