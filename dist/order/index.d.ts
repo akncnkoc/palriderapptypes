@@ -133,6 +133,7 @@ export type OrderShipmentDestinationDTO = {
     contains_adult_content: boolean;
     status: OrderShipmentDestinationStatus;
     order_shipment_destination_delivery_photos: Array<OrderShipmentDestinationDeliveryPhotoDTO>;
+    order_shipment_destination_cancellation_photos: Array<OrderShipmentDestinationCancellationPhotoDTO>;
     order_shipment_destination_cancellation_reason_id: string | null;
     order_shipment_destination_cancellation_reason: OrderShipmentDestinationCancellationReasonDTO | null;
     expected_delivery_time: string;
@@ -143,6 +144,10 @@ export type OrderShipmentDestinationDTO = {
     longitude: number;
 };
 export type OrderShipmentDestinationDeliveryPhotoDTO = {
+    id: string;
+    order_shipment_destination_id: string;
+};
+export type OrderShipmentDestinationCancellationPhotoDTO = {
     id: string;
     order_shipment_destination_id: string;
 };
