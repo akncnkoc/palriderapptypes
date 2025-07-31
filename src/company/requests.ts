@@ -90,10 +90,7 @@ export type CreateCompanyRequestDTO = {
 export type UpdateCompanyRequestDTO = {
   name: string;
   official_name: string;
-  tax_number: string;
-  tax_administration: string;
-  phone: string;
-  website: string;
+  app_fee: number;
 };
 
 export type OnboardingCompanyRequestDTO = {

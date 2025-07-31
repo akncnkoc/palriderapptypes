@@ -3,6 +3,7 @@ export type CompanyDTO = {
     name: string | null;
     official_name: string | null;
     company_branches: Array<CompanyBranchDTO>;
+    app_fee: number;
     onboarding_state: "initialized" | "info_updated" | "address_updated" | "completed" | "onboarded";
     company_categories: Array<CompanyCategoryDTO>;
     created_at: Date;
