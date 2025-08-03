@@ -131,6 +131,8 @@ export type CourierVehicleDTO = {
   plate_number: string;
   status: CourierVehicleStatus;
   is_active: boolean;
+  confirmed_at: string | null;
+  rejected_at: string | null;
   courier_vehicle_photos: Array<CourierVehiclePhotoDTO>;
   courier_vehicle_refuse_type_id: string | null;
   courier_vehicle_refuse_type: CourierVehicleRefuseTypeDTO | null;
