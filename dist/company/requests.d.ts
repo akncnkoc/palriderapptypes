@@ -8,6 +8,8 @@ export type CreateCompanyBranchAddressRequestDTO = {
     directions: string;
     zip_code: string;
     company_branch_id: string;
+    address_photos: Array<FileType>;
+    address_documents: Array<FileType>;
 };
 export type UpdateCompanyBranchAddressRequestDTO = {
     company_branch_address_id: string;
