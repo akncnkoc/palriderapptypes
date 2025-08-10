@@ -2,7 +2,7 @@ export type CompanyDTO = {
   id: string;
   name: string | null;
   official_name: string | null;
-  company_branches: Array<CompanyBranchDTO>;
+  company_areas: Array<CompanyAreaDTO>;
   app_fee: number;
   onboarding_state:
     | "initialized"
@@ -14,16 +14,16 @@ export type CompanyDTO = {
   created_at: Date;
   updated_at: Date;
 };
-export type CompanyBranchDTO = {
+export type CompanyAreaDTO = {
   id: string;
   name: string;
   email: string | null;
   status: string;
   company_id: string;
-  company_branch_addresses?: Array<CompanyBranchAddressDTO>;
+  company_area_addresses?: Array<CompanyAreaAddressDTO>;
 };
 
-export type CompanyBranchAddressDTO = {
+export type CompanyAreaAddressDTO = {
   id: string;
   onboarding_state: string;
   address: string;
@@ -32,71 +32,71 @@ export type CompanyBranchAddressDTO = {
   latitude: number;
   building_name_or_number: string | null;
   zip_code: string;
-  company_branch?: CompanyBranchDTO | null;
-  company_branch_id: string;
-  company_branch_address_users?: Array<CompanyBranchAddressUserDTO>;
-  company_branch_address_photos: Array<CompanyBranchAddressPhotoDTO>;
-  company_branch_address_documents?: Array<CompanyBranchAddressDocumentDTO>;
+  company_area?: CompanyAreaDTO | null;
+  company_area_id: string;
+  company_area_address_users?: Array<CompanyAreaAddressUserDTO>;
+  company_area_address_photos: Array<CompanyAreaAddressPhotoDTO>;
+  company_area_address_documents?: Array<CompanyAreaAddressDocumentDTO>;
   updated_at: string;
 };
-export type CompanyBranchAddressPhotoDTO = {
+export type CompanyAreaAddressPhotoDTO = {
   id: string;
   path: string;
   size: string;
 };
 
-export type CompanyBranchAddressDocumentTypeDTO = {
+export type CompanyAreaAddressDocumentTypeDTO = {
   id: string;
   name: string;
   group: string;
   description: string;
 };
-export type CompanyBranchAddressDocumentTypeTranslationDTO = {
+export type CompanyAreaAddressDocumentTypeTranslationDTO = {
   id: string;
   name: string;
-  company_branch_address_document_type_id: string;
+  company_area_address_document_type_id: string;
   culture: string;
   group: string;
   description: string;
 };
 
-export type CompanyBranchAddressDocumentRefuseTypeDTO = {
+export type CompanyAreaAddressDocumentRefuseTypeDTO = {
   id: string;
   name: string;
   group: string;
   description: string;
 };
-export type CompanyBranchAddressDocumentRefuseTypeTranslationDTO = {
+export type CompanyAreaAddressDocumentRefuseTypeTranslationDTO = {
   id: string;
   name: string;
-  company_branch_address_document_refuse_type_id: string;
+  company_area_address_document_refuse_type_id: string;
   culture: string;
   group: string;
   description: string;
 };
-export type CompanyBranchAddressDocumentStatus =
+export type CompanyAreaAddressDocumentStatus =
   | "pending"
   | "approved"
   | "refused";
-export type CompanyBranchAddressDocumentDTO = {
+export type CompanyAreaAddressDocumentDTO = {
   id: string;
-  company_branch_address_document_type: CompanyBranchAddressDocumentTypeDTO;
-  status: CompanyBranchAddressDocumentStatus;
+  company_area_address_document_type: CompanyAreaAddressDocumentTypeDTO;
+  status: CompanyAreaAddressDocumentStatus;
   approved_at: string | null;
   refused_at: string | null;
-  company_branch_address_document_refuse_type?: CompanyBranchAddressDocumentRefuseTypeDTO | null;
+  company_area_address_document_refuse_type?: CompanyAreaAddressDocumentRefuseTypeDTO | null;
 };
 
-export type CompanyBranchAddressUserRoleDTO = {
+export type CompanyAreaAddressUserRoleDTO = {
   id: string;
   name: string;
 };
-export type CompanyBranchAddressUserDTO = {
+export type CompanyAreaAddressUserDTO = {
   id: string;
   company_id: string | null;
-  company_branch_id: string | null;
-  company_branch_address_id: string | null;
-  company_branch_address_user_role_id: string | null;
+  company_area_id: string | null;
+  company_area_address_id: string | null;
+  company_area_address_user_role_id: string | null;
   created_at: string | null;
   updated_at: string | null;
   acceptance_waiting_list: Array<string>;
@@ -106,8 +106,8 @@ export type CompanyBranchAddressUserDTO = {
   phone_number: string;
   is_active: boolean;
   company: CompanyDTO | null;
-  company_branch: CompanyBranchDTO | null;
-  company_branch_address_user_role: CompanyBranchAddressUserRoleDTO | null;
+  company_area: CompanyAreaDTO | null;
+  company_area_address_user_role: CompanyAreaAddressUserRoleDTO | null;
   company_wallet_id: string | null;
   company_app_fee: number;
 };
@@ -119,10 +119,10 @@ export type CompanyPaymentMethodType = {
   expiry_date: string;
   cvv: string;
 };
-export type CompanyBranchAddressWalletDTO = {
+export type CompanyAreaAddressWalletDTO = {
   id: string;
   name: string;
-  company_branch_id: string;
+  company_area_id: string;
   balance: number;
   inconsumable_balance: number;
   created_at: string;
@@ -131,34 +131,34 @@ export type CompanyBranchAddressWalletDTO = {
   deleted_at: string | null;
 };
 
-export type CompanyBranchAddressWalletTransactionType =
+export type CompanyAreaAddressWalletTransactionType =
   | "start"
   | "add"
   | "subtract";
-export type CompanyBranchAddressWalletTransactionDTO = {
+export type CompanyAreaAddressWalletTransactionDTO = {
   id: string;
-  company_branch_address_wallet_id: string;
+  company_area_address_wallet_id: string;
   order_id: string | null;
-  type: CompanyBranchAddressWalletTransactionType;
-  company_branch_address_user_id: string;
+  type: CompanyAreaAddressWalletTransactionType;
+  company_area_address_user_id: string;
   amount: number;
   created_at: string;
   updated_at: string;
   is_deleted: boolean;
   deleted_at: string | null;
-  company_branch_address_wallet_transaction_items: Array<CompanyBranchAddressWalletTransactionItemDTO>;
+  company_area_address_wallet_transaction_items: Array<CompanyAreaAddressWalletTransactionItemDTO>;
 };
 
-export type CompanyBranchAddressWalletTransactionItemType =
+export type CompanyAreaAddressWalletTransactionItemType =
   | "order_payment"
   | "app_using_fee";
-export type CompanyBranchAddressWalletTransactionItemDTO = {
+export type CompanyAreaAddressWalletTransactionItemDTO = {
   id: string;
   name: string;
   description: string;
   amount: number;
-  type: CompanyBranchAddressWalletTransactionItemType;
-  company_branch_address_wallet_transaction_id: string;
+  type: CompanyAreaAddressWalletTransactionItemType;
+  company_area_address_wallet_transaction_id: string;
 };
 
 export type CompanyCategoryDTO = {
@@ -196,7 +196,7 @@ export type CompanyWalletTransactionDTO = {
   id: string;
   company_wallet_id: string;
   type: CompanyWalletTransactionType;
-  company_branch_address_user_id: string;
+  company_area_address_user_id: string;
   amount: number;
   created_at: string;
   updated_at: string;

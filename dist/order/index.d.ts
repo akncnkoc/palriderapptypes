@@ -1,4 +1,4 @@
-import { CompanyBranchAddressDTO, CompanyBranchDTO, CompanyBranchAddressUserDTO, CompanyDTO } from "~/company";
+import { CompanyAreaAddressDTO, CompanyAreaDTO, CompanyAreaAddressUserDTO, CompanyDTO } from "~/company";
 import { CourierDTO } from "~/courier";
 export type OrderVehicleType = "bike" | "motorcycle" | "car";
 export type OrderChannel = "mobile" | "web" | "integration";
@@ -11,9 +11,9 @@ export type OrderDTO = {
     hourly_rate: number;
     order_no: string;
     company: CompanyDTO | null;
-    company_branch: CompanyBranchDTO | null;
-    company_branch_address_user: CompanyBranchAddressUserDTO | null;
-    company_branch_address: CompanyBranchAddressDTO | null;
+    company_area: CompanyAreaDTO | null;
+    company_area_address_user: CompanyAreaAddressUserDTO | null;
+    company_area_address: CompanyAreaAddressDTO | null;
     vehicle_types: Array<OrderVehicleType>;
     amount_to_paid: number;
     current_mile: number;
@@ -42,7 +42,7 @@ export type CourierActiveOrderDTO = {
     start_duration: string;
     end_duration: string;
     order_no: string;
-    company_branch_address: CompanyBranchAddressDTO;
+    company_area_address: CompanyAreaAddressDTO;
     order_shipments: Array<OrderShipmentDTO>;
     driven_km: number;
     location_visited: number;
@@ -109,7 +109,7 @@ export type OrderCourierDTO = {
 };
 export type OrderShipmentDepartureDTO = {
     id: string;
-    company_branch_address: CompanyBranchAddressDTO;
+    company_area_address: CompanyAreaAddressDTO;
 };
 export type OrderShipmentDestinationStatus = "waiting_delivery" | "on_the_way" | "delivered" | "cancelled";
 export type OrderShipmentDestinationCancellationReasonDTO = {
