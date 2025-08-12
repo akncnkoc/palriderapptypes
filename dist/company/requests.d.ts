@@ -7,7 +7,7 @@ export type CreateCompanyAreaAddressRequestDTO = {
     building_name_or_number: string;
     directions: string;
     zip_code: string;
-    company_area_id: string;
+    company_area_name: string;
     address_photos: Array<FileType>;
     address_documents: Array<FileType>;
 };
