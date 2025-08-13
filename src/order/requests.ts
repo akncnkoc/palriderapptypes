@@ -37,7 +37,7 @@ export type CreateOrderRequestDTO = {
   courier_count: number;
   order_bonus_type: string;
   vehicle_types: Array<CourierVehicleType>;
-  order_bonuses: Array<CreateOrderRequestDTO>;
+  order_bonuses: Array<CreateOrderBonusRequestDTO>;
 };
 
 export type CreateOrderShipmentDestinationRequestDTO = {
