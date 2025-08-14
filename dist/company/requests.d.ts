@@ -6,7 +6,7 @@ export type CreateCompanyAreaAddressRequestDTO = {
     longitude: number;
     building_name_or_number: string;
     directions: string;
-    zip_code: string;
+    post_code: string;
     company_area_name: string;
     address_photos: Array<FileType>;
     address_documents: Array<FileType>;
@@ -106,7 +106,7 @@ export type OnboardingCompanyAreaAddressRequestDTO = {
     address: string;
     building: string;
     directions: string;
-    zip_code: string;
+    post_code: string;
     latitude: number;
     longitude: number;
     documents: Array<FileType>;

@@ -40,7 +40,7 @@ export type CreateOrderShipmentDestinationRequestDTO = {
     address: string;
     latitude: number;
     longitude: number;
-    zip_code: string;
+    post_code: string;
     notes: string | null;
     payment_at_the_door: boolean;
     receive_fee: number;

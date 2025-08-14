@@ -25,7 +25,7 @@ export type CompanyAreaAddressDTO = {
     longitude: number;
     latitude: number;
     building_name_or_number: string | null;
-    zip_code: string;
+    post_code: string;
     company_area?: CompanyAreaDTO | null;
     company_area_id: string;
     company_area_address_users?: Array<CompanyAreaAddressUserDTO>;

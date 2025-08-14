@@ -125,7 +125,7 @@ export type OrderShipmentDestinationDTO = {
     address: string;
     sort: number;
     notes: string | null;
-    zip_code: string | null;
+    post_code: string | null;
     overview_polyline: string;
     duration: number;
     distance: number;
