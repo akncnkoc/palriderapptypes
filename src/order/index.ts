@@ -21,6 +21,7 @@ export type OrderDTO = {
   duration: string;
   hourly_rate: number;
   order_no: string;
+  order_bonus_type: string;
   company: CompanyDTO | null;
   company_area: CompanyAreaDTO | null;
   company_area_address_user: CompanyAreaAddressUserDTO | null;
@@ -32,7 +33,7 @@ export type OrderDTO = {
   total_amount: number;
   discount: number;
   total_price: number;
-  max_tota_price: number;
+  max_total_price: number;
   channel: OrderChannel;
   status: OrderStatus;
   created_at: string;
@@ -62,6 +63,8 @@ export type CourierActiveOrderDTO = {
   current_working_hours: string;
   could_work: boolean;
   total_earning: number;
+  order_bonuses: Array<OrderBonusDTO>;
+  order_bonus_type: string;
 };
 
 export type OrderShipmentStatus =
