@@ -110,6 +110,7 @@ export type OnboardingCompanyAreaAddressRequestDTO = {
     latitude: number;
     longitude: number;
     documents: Array<FileType>;
+    photos: Array<FileType>;
 };
 export type CreateCompanyAreaAddresssUserRequestDTO = {
     name: string;
