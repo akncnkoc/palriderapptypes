@@ -110,6 +110,7 @@ export type CompanyAreaAddressWalletDTO = {
     id: string;
     name: string;
     company_area_id: string;
+    company_area_address_id: string;
     balance: number;
     inconsumable_balance: number;
     created_at: string;
