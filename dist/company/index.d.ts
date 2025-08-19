@@ -198,6 +198,7 @@ export type CompanyWalletTransferRequestDTO = {
     created_at: string;
     company_wallet: CompanyWalletDTO | null;
     company_area_address_wallet: CompanyAreaAddressWalletDTO | null;
+    company_area_address: CompanyAreaAddressDTO | null;
     company_area_address_user: CompanyAreaAddressUserDTO | null;
 };
 export * from "./requests";
