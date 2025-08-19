@@ -218,5 +218,19 @@ export type CompanyWalletTransactionItemDTO = {
   type: CompanyWalletTransactionItemType;
   company_wallet_transaction_id: string;
 };
+export type CompanyWalletTransferRequestDTO = {
+  id: string;
+  amount: number;
+  company_wallet_id: string;
+  company_area_address_wallet_id: string;
+  company_area_address_user_id: string;
+  status: "pending" | "approved" | "rejected";
+  approved_at: string | null;
+  rejected_at: string | null;
+  created_at: string;
+  company_wallet: CompanyWalletDTO | null;
+  company_area_address_wallet: CompanyAreaAddressWalletDTO | null;
+  company_area_address_user: CompanyAreaAddressUserDTO | null;
+};
 
 export * from "./requests";
