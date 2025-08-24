@@ -29,14 +29,17 @@ export type CompanyAreaAddressDTO = {
     company_area?: CompanyAreaDTO | null;
     company_area_id: string;
     company_area_address_users?: Array<CompanyAreaAddressUserDTO>;
-    company_area_address_photos: Array<CompanyAreaAddressPhotoDTO>;
     company_area_address_documents?: Array<CompanyAreaAddressDocumentDTO>;
+    company_area_address_photos: Array<CompanyAreaAddressPhotoDTO>;
     updated_at: string;
 };
 export type CompanyAreaAddressPhotoDTO = {
     id: string;
-    path: string;
-    size: string;
+    company_area_address_photo_type: CompanyAreaAddressPhotoTypeDTO | null;
+    status: CompanyAreaAddressPhotoStatus;
+    approved_at: string | null;
+    refused_at: string | null;
+    company_area_address_photo_refuse_type?: CompanyAreaAddressPhotoRefuseTypeDTO | null;
 };
 export type CompanyAreaAddressDocumentTypeDTO = {
     id: string;
@@ -95,9 +98,10 @@ export type CompanyAreaAddressPhotoRefuseTypeTranslationDTO = {
     description: string;
 };
 export type CompanyAreaAddressDocumentStatus = "pending" | "approved" | "refused";
+export type CompanyAreaAddressPhotoStatus = "pending" | "approved" | "refused";
 export type CompanyAreaAddressDocumentDTO = {
     id: string;
-    company_area_address_document_type: CompanyAreaAddressDocumentTypeDTO;
+    company_area_address_document_type: CompanyAreaAddressDocumentTypeDTO | null;
     status: CompanyAreaAddressDocumentStatus;
     approved_at: string | null;
     refused_at: string | null;
