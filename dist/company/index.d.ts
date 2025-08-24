@@ -66,6 +66,34 @@ export type CompanyAreaAddressDocumentRefuseTypeTranslationDTO = {
     group: string;
     description: string;
 };
+export type CompanyAreaAddressPhotoTypeDTO = {
+    id: string;
+    name: string;
+    group: string;
+    description: string;
+};
+export type CompanyAreaAddressPhotoTypeTranslationDTO = {
+    id: string;
+    name: string;
+    company_area_address_photo_type_id: string;
+    culture: string;
+    group: string;
+    description: string;
+};
+export type CompanyAreaAddressPhotoRefuseTypeDTO = {
+    id: string;
+    name: string;
+    group: string;
+    description: string;
+};
+export type CompanyAreaAddressPhotoRefuseTypeTranslationDTO = {
+    id: string;
+    name: string;
+    company_area_address_photo_refuse_type_id: string;
+    culture: string;
+    group: string;
+    description: string;
+};
 export type CompanyAreaAddressDocumentStatus = "pending" | "approved" | "refused";
 export type CompanyAreaAddressDocumentDTO = {
     id: string;
