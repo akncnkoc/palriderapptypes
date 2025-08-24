@@ -7,6 +7,7 @@ export type OrderDTO = {
     id: string;
     start_duration: string;
     end_duration: string;
+    work_hour: number;
     duration: string;
     hourly_rate: number;
     order_no: string;
