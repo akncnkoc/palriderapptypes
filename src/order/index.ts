@@ -3,6 +3,7 @@ import {
   CompanyAreaDTO,
   CompanyAreaAddressUserDTO,
   CompanyDTO,
+  CompanyAreaAddressWalletDTO,
 } from "~/company";
 import { CourierDTO } from "~/courier";
 
@@ -28,6 +29,7 @@ export type OrderDTO = {
   company_area: CompanyAreaDTO | null;
   company_area_address_user: CompanyAreaAddressUserDTO | null;
   company_area_address: CompanyAreaAddressDTO | null;
+  company_area_address_wallat: CompanyAreaAddressWalletDTO | null;
   vehicle_types: Array<OrderVehicleType>;
   amount_to_paid: number;
   current_mile: number;
