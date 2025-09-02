@@ -31,6 +31,7 @@ export type CompanyAreaAddressDTO = {
     company_area_address_users?: Array<CompanyAreaAddressUserDTO>;
     company_area_address_documents?: Array<CompanyAreaAddressDocumentDTO>;
     company_area_address_photos: Array<CompanyAreaAddressPhotoDTO>;
+    average_rating: number;
     updated_at: string;
 };
 export type CompanyAreaAddressPhotoDTO = {

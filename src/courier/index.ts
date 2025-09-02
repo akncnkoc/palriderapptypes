@@ -27,7 +27,7 @@ export type CourierDTO = {
   active_vehicle: CourierVehicleDTO | null;
   approved_at: string | null;
   rejected_at_: string | null;
-
+  average_rating: number;
   created_at: string;
   updated_at: string;
   deleted_at: string | null;

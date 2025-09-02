@@ -45,6 +45,7 @@ export type OrderDTO = {
   deleted_at: string | null;
   order_courier_attendee_count: number;
   order_bonuses: Array<OrderBonusDTO>;
+  order_ratings: Array<OrderRatingDTO>;
   order_shipments: Array<OrderShipmentDTO>;
   order_courier_attendees: Array<OrderCourierAttendeeDTO>;
   driven_km: number;
@@ -54,6 +55,16 @@ export type OrderDTO = {
   courier_proximity: number;
 };
 
+export type OrderRatingDTO = {
+  id: string;
+  to_id: string;
+  to_type: string;
+  from_id: string;
+  from_type: string;
+  order_id: string;
+  value: string;
+  created_at: string;
+};
 export type CourierActiveOrderDTO = {
   id: string;
   start_duration: string;
