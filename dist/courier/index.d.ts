@@ -1,5 +1,5 @@
 import { BaseUserDTO } from "~/common";
-import { OrderDTO } from "~/order";
+import { OrderDTO, OrderStatus } from "~/order";
 export type CourierOnboardingState = "initialized" | "info_updated" | "document_uploaded" | "vehicle_uploaded" | "completed" | "onboarded";
 export type CourierOrderState = "available" | "delivering" | "arriving";
 export type CourierDTO = {
@@ -113,5 +113,19 @@ export type CourierVehicleDTO = {
 export type CourierVehiclePhotoDTO = {
     id: string;
     path: string;
+};
+export type CourierOrderDTO = {
+    id: string;
+    company_id: string;
+    company_area_id: string;
+    company_area_address_id: string;
+    company_name: string;
+    started_at: string;
+    finished_at: string;
+    status: OrderStatus;
+    order_no: string;
+    total_earning: number;
+    is_order_rated: boolean;
+    order_rating: number;
 };
 export * from "./requests";
