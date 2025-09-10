@@ -67,6 +67,7 @@ export type CourierActiveOrderDTO = {
     total_earning: number;
     order_bonuses: Array<OrderBonusDTO>;
     order_bonus_type: string;
+    order_rating: OrderRatingDTO | null;
 };
 export type OrderShipmentStatus = "waiting_delivery" | "on_delivery" | "completed" | "cancelled";
 export type OrderShipmentCancellationReasonDTO = {
