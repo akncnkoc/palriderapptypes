@@ -1,6 +1,6 @@
 {
   "name": "palriderapptypes",
-  "version": "0.0.67",
+  "version": "0.0.68",
   "main": "",
   "types": "dist/index.d.ts",
   "scripts": {

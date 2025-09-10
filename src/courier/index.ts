@@ -1,5 +1,5 @@
 import { BaseUserDTO } from "~/common";
-import { OrderDTO, OrderStatus } from "~/order";
+import { OrderDTO, OrderRatingDTO, OrderStatus } from "~/order";
 
 export type CourierOnboardingState =
   | "initialized"
@@ -152,8 +152,7 @@ export type CourierOrderDTO = {
   status: OrderStatus;
   order_no: string;
   total_earning: number;
-  is_order_rated: boolean;
-  order_rating: number;
+  order_rating: OrderRatingDTO | null;
 }
 
 export * from "./requests";
