@@ -2,11 +2,10 @@ import { FileType } from "~/common";
 
 export type CreateCompanyAreaAddressRequestDTO = {
   address: string;
-  phone: string;
   latitude: number;
   longitude: number;
-  building_name_or_number: string;
   directions: string;
+  building_name_or_number: string;
   post_code: string;
   company_area_name: string;
   address_photos: Array<FileType>;

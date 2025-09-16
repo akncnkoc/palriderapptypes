@@ -29,29 +29,21 @@ export type OrderDTO = {
   company_area: CompanyAreaDTO | null;
   company_area_address_user: CompanyAreaAddressUserDTO | null;
   company_area_address: CompanyAreaAddressDTO | null;
-  company_area_address_wallat: CompanyAreaAddressWalletDTO | null;
+  company_area_address_wallet: CompanyAreaAddressWalletDTO | null;
   vehicle_types: Array<OrderVehicleType>;
   amount_to_paid: number;
   current_mile: number;
   current_hour: number;
   total_amount: number;
-  discount: number;
-  total_price: number;
-  max_total_price: number;
   channel: OrderChannel;
   status: OrderStatus;
   created_at: string;
-  updated_at: string;
-  deleted_at: string | null;
-  order_courier_attendee_count: number;
   order_bonuses: Array<OrderBonusDTO>;
   order_ratings: Array<OrderRatingDTO>;
   order_shipments: Array<OrderShipmentDTO>;
   order_courier_attendees: Array<OrderCourierAttendeeDTO>;
-  driven_km: number;
-  location_visited: number;
+  driven_mile: number;
   current_working_hours: number;
-  total_earning: number;
   courier_proximity: number;
 };
 
@@ -79,7 +71,7 @@ export type CourierActiveOrderDTO = {
   could_work: boolean;
   total_earning: number;
   order_bonuses: Array<OrderBonusDTO>;
-  order_bonus_type: string;
+  order_bonus_type: OrderBonusType;
   order_rating: OrderRatingDTO | null;
 };
 
@@ -96,17 +88,14 @@ export type OrderShipmentCancellationReasonDTO = {
 export type CourierActiveOrderShipmentDTO = {
   id: string;
   order_id: string;
-  sort: number;
   notes: string;
   distance: number;
   duration: number;
   order_shipment_no: string;
-  expected_delivery_time: string;
   completed_at: string | null;
   cancelled_at: string | null;
   current_order_shipment_destination_id: string | null;
   current_order_shipment_destination: OrderShipmentDestinationDTO | null;
-  overview_polyline: string;
   status: OrderShipmentStatus;
   courier: CourierDTO | null;
   order_shipment_departure: OrderShipmentDepartureDTO;
@@ -114,8 +103,6 @@ export type CourierActiveOrderShipmentDTO = {
   order_shipment_cancellation_reason_id: string | null;
   order_shipment_cancellation_reason: OrderShipmentCancellationReasonDTO;
   created_at: string;
-  updated_at: string;
-  deleted_at: string | null;
 };
 
 export type OrderBonusDTO = {
@@ -238,8 +225,33 @@ export type OrderShipmentDTO = {
   order_shipment_cancellation_reason_id: string | null;
   order_shipment_cancellation_reason: OrderShipmentCancellationDTO | null;
   created_at: string;
-  updated_at: string;
-  deleted_at: string | null;
 };
+export type OrderBonusType = "none" | "by_distance" | "per_shipment";
+
+export type NearbyOrderCompanyDTO = {
+  id: string;
+  name: string;
+  official_name: string;
+}
+export type NearbyOrderCompanyAreaAddressDTO = {
+  id: string;
+  latitude: number;
+  longitude: number;
+}
+export type NearbyOrderDTO = {
+  id: string;
+  start_duration: string;
+  end_duration: string;
+  work_hour: number;
+  hourly_rate: number;
+  order_no: string;
+  courier_count: number;
+  company: NearbyOrderCompanyDTO;
+  company_area_address: NearbyOrderCompanyAreaAddressDTO;
+  vehicle_type: Array<string>
+  order_bonus_type: OrderBonusType;
+  order_duration: number;
+  order_bonuses: Array<OrderBonusDTO>
+}
 
 export * from "./requests";

@@ -1,4 +1,5 @@
 import { BaseUserDTO } from "~/common";
+import { CompanyAreaAddressDTO } from "~/company";
 import { OrderDTO, OrderRatingDTO, OrderStatus } from "~/order";
 
 export type CourierOnboardingState =
@@ -12,12 +13,10 @@ export type CourierOrderState = "available" | "delivering" | "arriving";
 export type CourierDTO = {
   id: string;
   name: string | null;
-  user?: BaseUserDTO | null;
   identifier: string;
   onboarding_state: CourierOnboardingState;
   order_state: CourierOrderState;
   user_id: string;
-
   current_active_arriving_order_id: string | null;
   current_active_arrived_order_id: string | null;
   current_active_order_id: string | null;
@@ -25,18 +24,16 @@ export type CourierDTO = {
   current_active_order_shipment_destination_id: string | null;
   current_active_arriving_order?: OrderDTO | null;
   active_vehicle: CourierVehicleDTO | null;
-  approved_at: string | null;
+  confirmed_at: string | null;
   rejected_at_: string | null;
-  average_rating: number;
   created_at: string;
-  updated_at: string;
-  deleted_at: string | null;
-
   courier_vehicles: Array<CourierVehicleDTO>;
   courier_bank_accounts: Array<CourierBankAccountDTO>;
   courier_documents: Array<CourierDocumentDTO>;
   courier_wallets: Array<CourierWalletDTO> | null;
   courier_wallet_transactions: Array<CourierWalletTransactionDTO> | null;
+  order_ratings: Array<OrderRatingDTO>;
+  average_rating: number;
   acceptance_waiting_list: Array<string>;
 };
 
@@ -73,7 +70,8 @@ export type CourierDocumentDTO = {
 
 export type CourierWalletTransactionItemType =
   | "order_earning"
-  | "app_using_fee";
+  | "app_using_fee"
+  | "withdraw";
 export type CourierWalletTransactionItemDTO = {
   id: string;
   name: string;
@@ -81,12 +79,19 @@ export type CourierWalletTransactionItemDTO = {
   amount: number;
   type: CourierWalletTransactionItemType;
 };
-
+export type CourierWalletTransactionType =
+  | "start"
+  | "incoming"
+  | "outgoing"
+  | "tip"
+  | "punishment";
 export type CourierWalletTransactionDTO = {
   id: string;
   amount: number;
-  transaction_type: "incoming" | "outgoing" | "tip" | "punishment";
+  transaction_type:CourierWalletTransactionType;
   created_at: string;
+  courier_id: string;
+  order_id: string | null;
   courier_wallet_transaction_items: Array<CourierWalletTransactionItemDTO>;
 };
 
@@ -110,8 +115,6 @@ export type CourierBankAccountDTO = {
   sort_code: string;
   account_holder_name: string;
   account_number: string;
-  is_suspended: boolean;
-  is_primary: boolean;
   is_active: boolean;
   courier_id: string;
 };
@@ -128,7 +131,7 @@ export type CourierVehicleDTO = {
   id: string;
   courier_id: string;
   type: CourierVehicleType;
-  plate_number: string;
+  plate_number: string | null;
   status: CourierVehicleStatus;
   is_active: boolean;
   confirmed_at: string | null;
@@ -143,16 +146,49 @@ export type CourierVehiclePhotoDTO = {
 };
 export type CourierOrderDTO = {
   id: string;
-  company_id: string;
-  company_area_id:string;
-  company_area_address_id: string;
-  company_name: string;
   started_at: string;
   finished_at: string;
   status: OrderStatus;
+  company_name: string;
+  company_id: string;
+  company_area_id:string;
+  company_area_address_id: string;
   order_no: string;
   total_earning: number;
-  order_rating: OrderRatingDTO | null;
+  is_order_rated: boolean;
+  rating: number | null;
 }
-
+export type CourierBlockedCompanyAreaAddressDTO = {
+  id:  string;
+  courier_id: string;
+  company_area_address_id: string;
+  courier_blocked_company_area_address_reason_id: string;
+  courier: CourierDTO | null;
+  company_area_address: CompanyAreaAddressDTO | null;
+  courier_blocked_company_area_address_reason: CourierBlockedCompanyAreaAddressReasonDTO | null;
+}
+export type CourierBlockedCompanyAreaAddressReasonDTO = {
+  id: string;
+  name: string;
+  description: string;
+}
+export type CourierStatisticsDTO = {
+  total_earnings: number;
+  total_wallet: number;
+  total_mile: number;
+  total_shipment_count: number;
+  average_rating: number;
+}
+export type CourierWalletWithdrawalRequestStatus = "";
+export type CourierWalletWithdrawalRequestDTO = {
+  id: string;
+  status: CourierWalletWithdrawalRequestStatus;
+  amount: number;
+  courier_bank_account: CourierBankAccountDTO;
+  courier_wallet: CourierWalletDTO;
+  accepted_at: string | null;
+  rejected_at: string | null;
+  created_at: string;
+  rejected_description: string;
+}
 export * from "./requests";
