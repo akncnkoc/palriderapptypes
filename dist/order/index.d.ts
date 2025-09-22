@@ -51,7 +51,7 @@ export type CourierActiveOrderDTO = {
     order_no: string;
     company_area_address: CompanyAreaAddressDTO;
     order_shipments: Array<OrderShipmentDTO>;
-    driven_km: number;
+    driven_mile: number;
     location_visited: number;
     vehicle_types: Array<OrderVehicleType>;
     current_working_hours: string;

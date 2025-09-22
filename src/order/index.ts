@@ -64,7 +64,7 @@ export type CourierActiveOrderDTO = {
   order_no: string;
   company_area_address: CompanyAreaAddressDTO;
   order_shipments: Array<OrderShipmentDTO>;
-  driven_km: number;
+  driven_mile: number;
   location_visited: number;
   vehicle_types: Array<OrderVehicleType>;
   current_working_hours: string;
@@ -232,12 +232,12 @@ export type NearbyOrderCompanyDTO = {
   id: string;
   name: string;
   official_name: string;
-}
+};
 export type NearbyOrderCompanyAreaAddressDTO = {
   id: string;
   latitude: number;
   longitude: number;
-}
+};
 export type NearbyOrderDTO = {
   id: string;
   start_duration: string;
@@ -248,10 +248,10 @@ export type NearbyOrderDTO = {
   courier_count: number;
   company: NearbyOrderCompanyDTO;
   company_area_address: NearbyOrderCompanyAreaAddressDTO;
-  vehicle_type: Array<string>
+  vehicle_type: Array<string>;
   order_bonus_type: OrderBonusType;
   order_duration: number;
-  order_bonuses: Array<OrderBonusDTO>
-}
+  order_bonuses: Array<OrderBonusDTO>;
+};
 
 export * from "./requests";
