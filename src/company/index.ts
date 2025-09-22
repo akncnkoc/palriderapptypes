@@ -270,11 +270,11 @@ export type CompanyAreaAddressBlockedCourierDTO = {
   created_at: string;
   company_area_adddress_blocked_courier_reason: CompanyAreaAddressBlockedCourierReasonDTO;
   courier: CourierDTO | null;
-}
+};
 export type CompanyAreaAddressBlockedCourierReasonDTO = {
   id: string;
   name: string;
   description: string;
-}
+};
 
 export * from "./requests";

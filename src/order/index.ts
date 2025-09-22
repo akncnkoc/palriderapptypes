@@ -55,6 +55,7 @@ export type OrderRatingDTO = {
   from_type: string;
   order_id: string;
   value: string;
+  description: string;
   created_at: string;
 };
 export type CourierActiveOrderDTO = {

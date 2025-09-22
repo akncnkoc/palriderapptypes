@@ -1,4 +1,3 @@
-import { BaseUserDTO } from "~/common";
 import { CompanyAreaAddressDTO } from "~/company";
 import { OrderDTO, OrderRatingDTO, OrderStatus } from "~/order";
 
@@ -88,7 +87,7 @@ export type CourierWalletTransactionType =
 export type CourierWalletTransactionDTO = {
   id: string;
   amount: number;
-  transaction_type:CourierWalletTransactionType;
+  transaction_type: CourierWalletTransactionType;
   created_at: string;
   courier_id: string;
   order_id: string | null;
@@ -151,34 +150,34 @@ export type CourierOrderDTO = {
   status: OrderStatus;
   company_name: string;
   company_id: string;
-  company_area_id:string;
+  company_area_id: string;
   company_area_address_id: string;
   order_no: string;
   total_earning: number;
   is_order_rated: boolean;
   rating: number | null;
-}
+};
 export type CourierBlockedCompanyAreaAddressDTO = {
-  id:  string;
+  id: string;
   courier_id: string;
   company_area_address_id: string;
   courier_blocked_company_area_address_reason_id: string;
   courier: CourierDTO | null;
   company_area_address: CompanyAreaAddressDTO | null;
   courier_blocked_company_area_address_reason: CourierBlockedCompanyAreaAddressReasonDTO | null;
-}
+};
 export type CourierBlockedCompanyAreaAddressReasonDTO = {
   id: string;
   name: string;
   description: string;
-}
+};
 export type CourierStatisticsDTO = {
   total_earnings: number;
   total_wallet: number;
   total_mile: number;
   total_shipment_count: number;
   average_rating: number;
-}
+};
 export type CourierWalletWithdrawalRequestStatus = "";
 export type CourierWalletWithdrawalRequestDTO = {
   id: string;
@@ -190,5 +189,5 @@ export type CourierWalletWithdrawalRequestDTO = {
   rejected_at: string | null;
   created_at: string;
   rejected_description: string;
-}
+};
 export * from "./requests";
