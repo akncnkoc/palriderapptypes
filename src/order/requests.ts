@@ -31,7 +31,7 @@ export type CreateOrderRequestDTO = {
   company_area_id: string;
   company_area_address_id: string;
   company_area_address_wallet_id: string;
-  start_time: number;
+  start_time: string;
   work_hour: number;
   hourly_rate: number;
   courier_count: number;

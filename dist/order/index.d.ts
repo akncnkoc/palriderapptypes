@@ -2,7 +2,7 @@ import { CompanyAreaAddressDTO, CompanyAreaDTO, CompanyAreaAddressUserDTO, Compa
 import { CourierDTO } from "~/courier";
 export type OrderVehicleType = "bike" | "motorcycle" | "car";
 export type OrderChannel = "mobile" | "web" | "integration";
-export type OrderStatus = "pending" | "on_going" | "in_review" | "cancelled" | "completed";
+export type OrderStatus = "scheduled" | "on_going" | "in_review" | "cancelled" | "completed";
 export type OrderDTO = {
     id: string;
     start_duration: string;
@@ -94,7 +94,7 @@ export type OrderBonusDTO = {
     price: number;
     sort: number;
 };
-export type OrderCourierAttendeeStatus = "accepted" | "arriving" | "waiting_for_company_approval" | "working" | "completed" | "abondoned" | "rejected";
+export type OrderCourierAttendeeStatus = "attended" | "arriving" | "waiting_for_company_approval" | "working" | "completed" | "abondoned" | "rejected";
 export type OrderCourierAttendeeDTO = {
     id: string;
     order_id: string;
@@ -103,9 +103,24 @@ export type OrderCourierAttendeeDTO = {
     latitude: number;
     longitude: number;
     distance: number;
+    attended_at: string;
+    arriving_start_at: string | null;
+    arrived_at: string | null;
+    working_start_at: string | null;
+    completed_at: string | null;
+    abondoned_at: string | null;
+    rejected_at: string | null;
     created_at: string;
     name: string;
     surname: string;
+    order_courier_attendee_abondon_reason_id: string | null;
+    order_courier_attendee_abondon_reason: OrderCourierAttendeeAbondonReasonDTO | null;
+    order_courier_attendee_abondon_reason_content: string | null;
+};
+export type OrderCourierAttendeeAbondonReasonDTO = {
+    id: string;
+    title: string;
+    description: string;
 };
 export type OrderCourierDTO = {
     id: string;

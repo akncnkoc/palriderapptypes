@@ -10,7 +10,7 @@ import { CourierDTO } from "~/courier";
 export type OrderVehicleType = "bike" | "motorcycle" | "car";
 export type OrderChannel = "mobile" | "web" | "integration";
 export type OrderStatus =
-  | "pending"
+  | "scheduled"
   | "on_going"
   | "in_review"
   | "cancelled"
@@ -115,7 +115,7 @@ export type OrderBonusDTO = {
 };
 
 export type OrderCourierAttendeeStatus =
-  | "accepted"
+  | "attended"
   | "arriving"
   | "waiting_for_company_approval"
   | "working"
@@ -130,9 +130,24 @@ export type OrderCourierAttendeeDTO = {
   latitude: number;
   longitude: number;
   distance: number;
+  attended_at: string;
+  arriving_start_at: string | null;
+  arrived_at: string | null;
+  working_start_at: string | null;
+  completed_at: string | null;
+  abondoned_at: string | null;
+  rejected_at: string | null;
   created_at: string;
   name: string;
   surname: string;
+  order_courier_attendee_abondon_reason_id: string | null;
+  order_courier_attendee_abondon_reason: OrderCourierAttendeeAbondonReasonDTO | null;
+  order_courier_attendee_abondon_reason_content: string | null;
+};
+export type OrderCourierAttendeeAbondonReasonDTO = {
+  id: string;
+  title: string;
+  description: string;
 };
 export type OrderCourierDTO = {
   id: string;
