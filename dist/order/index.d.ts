@@ -114,8 +114,17 @@ export type OrderCourierAttendeeDTO = {
     name: string;
     surname: string;
     order_courier_attendee_abondon_reason_id: string | null;
-    order_courier_attendee_abondon_reason: OrderCourierAttendeeAbondonReasonDTO | null;
+    abondon_reason: OrderCourierAttendeeAbondonReasonDTO | null;
     order_courier_attendee_abondon_reason_content: string | null;
+    order: {
+        id: string;
+        order_no: string;
+        status: OrderStatus;
+        start_duration: string;
+        end_duration: string;
+        hourly_rate: number;
+        work_hour: number;
+    };
 };
 export type OrderCourierAttendeeAbondonReasonDTO = {
     id: string;
